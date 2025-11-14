@@ -1,0 +1,244 @@
+/* Definindo as cores e fontes */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-bg: #ecf0f1;
+  --dark-text: #2c3e50;
+  --light-text: #ffffff;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition: all 0.3s ease;
+  --success-color: #27ae60;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--dark-text);
+  line-height: 1.6;
+  background-color: #f8f9fa;
+}
+
+/* Estilizando o cabeçalho */
+header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--light-text);
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+/* Estilizando a navegação */
+nav {
+  background-color: var(--primary-color);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 25px;
+}
+
+nav a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: var(--transition);
+  padding: 8px 0;
+  border-bottom: 3px solid transparent;
+  display: inline-block;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+}
+
+/* Estilizando o formulário */
+form {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+legend {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--dark-text);
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+  background-color: #f8fbff;
+}
+
+/* Estilizando validação */
+input[type="text"]:valid,
+input[type="email"]:valid,
+input[type="tel"]:valid,
+input[type="date"]:valid {
+  border-color: var(--success-color);
+}
+
+input[type="text"]:invalid,
+input[type="email"]:invalid,
+input[type="tel"]:invalid,
+input[type="date"]:invalid {
+  border-color: var(--accent-color);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  color: var(--light-text);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.3);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Estilizando o footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  form {
+    margin: 30px 15px;
+    padding: 30px 20px;
+  }
+
+  legend {
+    font-size: 1.1rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  button[type="submit"] {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}
